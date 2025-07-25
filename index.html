@@ -1,93 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Nikil's Tech Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
+      padding: 40px;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: #fff;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+      color: #eee;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-size: 2.5em;
-      color: #00e5ff;
-      text-shadow: 0 0 10px #00e5ff;
+      font-size: 2em;
+      color: #4fc3f7;
+      text-shadow: 0 0 8px #4fc3f7;
     }
 
     .box {
-      background: rgba(0,0,0,0.5);
+      background: rgba(20, 20, 20, 0.8);
       padding: 20px;
+      border: 1px solid #4fc3f7;
       border-radius: 12px;
-      max-width: 600px;
-      margin: 30px auto;
-      box-shadow: 0 0 20px #0ff3;
+      box-shadow: 0 0 10px rgba(79, 195, 247, 0.3);
+      margin-top: 20px;
     }
 
-    li {
-      text-align: left;
-      margin: 10px 0;
+    ul {
+      list-style-type: '⚙️ ';
+      padding-left: 20px;
     }
 
     a {
-      color: #00e5ff;
+      color: #4fc3f7;
       text-decoration: none;
     }
 
     a:hover {
-      text-shadow: 0 0 8px #00e5ff;
+      text-shadow: 0 0 5px #4fc3f7;
     }
 
-    .tagline {
-      font-size: 1.2em;
-      color: #aaa;
+    /* Simple animated background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: radial-gradient(#2c2c2c, #000);
+      background-size: 300% 300%;
+      animation: pulseBG 10s ease infinite;
+      z-index: -1;
     }
 
-    .cta {
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #00e5ff;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      box-shadow: 0 0 15px #00e5ff88;
-    }
-
-    .cta:hover {
-      background-color: #00c8e6;
+    @keyframes pulseBG {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>👨‍💻 Nikil – Tech Services</h1>
-  <p class="tagline">Scripts • Fixes • Smart Solutions</p>
-
+  <h1>🧠 Nikil – Tech Services & Projects</h1>
+  <p>Offering affordable online help with:</p>
   <div class="box">
     <ul>
-      <li>⚙️ Python scripting (Jarvis-style tools, automation)</li>
-      <li>⌨️ Typing & formatting help</li>
-      <li>🔎 Web research or file work</li>
-      <li>🖥️ Windows issues fixed remotely</li>
+      <li>Python scripting (Jarvis-style tools, automation)</li>
+      <li>Typing and formatting tasks</li>
+      <li>Web research or file work</li>
+      <li>Windows troubleshooting</li>
     </ul>
   </div>
-
-  <p><b>💸 ₹500/hour or flat per-task</b></p>
-  <p><b>📬 Reddit:</b> <a href="https://www.reddit.com/user/Worried-You-7003" target="_blank">u/Worried-You-7003</a></p>
-  <button class="cta" onclick="alert('DM me on Reddit to get started!')">Contact Now</button>
+  <p><b>💸 Rate:</b> ₹500/hour or flat per-task</p>
+  <p><b>📬 Contact:</b> Reddit: <a href="https://reddit.com/u/Worried-You-7003" target="_blank">u/Worried-You-7003</a></p>
+  <p><b>📈 Available Now!</b></p>
 </body>
 </html>
