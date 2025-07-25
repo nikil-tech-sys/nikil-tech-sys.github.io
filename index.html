@@ -2,77 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nikil's Tech Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --accent: #4fc3f7;
-    }
-
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b1b1b);
-      background-size: 400% 400%;
-      animation: gradientBG 20s ease infinite;
-      color: #eee;
-      padding: 40px;
       margin: 0;
-      overflow-x: hidden;
-      transition: background 0.5s, color 0.5s;
-    }
-
-    h1 {
-      color: var(--accent);
-      opacity: 0;
-      animation: fadeInDown 1s forwards;
-    }
-
-    .box {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-      max-width: 600px;
-      opacity: 0;
-      transform: translateX(-50px);
-      animation: slideIn 1s forwards;
-      animation-delay: 0.7s;
-    }
-
-    p, ul {
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-    }
-
-    p:nth-of-type(2) { animation-delay: 1.4s; }
-    p:nth-of-type(3) { animation-delay: 1.6s; }
-    p:nth-of-type(4) { animation-delay: 1.8s; }
-
-    a, button {
-      color: var(--accent);
-      text-decoration: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1em;
-    }
-
-    a:hover, button:hover {
-      color: #81d4fa;
-      text-decoration: underline;
-    }
-
-    .actions {
-      margin-top: 20px;
-    }
-
-    .toggle-btn {
-      margin-right: 20px;
-      padding: 8px 14px;
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      color: #eee;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
     }
 
     @keyframes gradientBG {
@@ -81,70 +22,72 @@
       100% { background-position: 0% 50%; }
     }
 
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    h1 {
+      font-size: 2.5em;
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff;
     }
 
-    @keyframes slideIn {
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    .box {
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 30px auto;
+      box-shadow: 0 0 20px #0ff3;
     }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+    li {
+      text-align: left;
+      margin: 10px 0;
+    }
+
+    a {
+      color: #00e5ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-shadow: 0 0 8px #00e5ff;
+    }
+
+    .tagline {
+      font-size: 1.2em;
+      color: #aaa;
+    }
+
+    .cta {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #00e5ff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00e5ff88;
+    }
+
+    .cta:hover {
+      background-color: #00c8e6;
     }
   </style>
 </head>
 <body>
-  <h1>🧠 Nikil – Tech Services & Projects</h1>
-  <p>Offering affordable online help with:</p>
+  <h1>👨‍💻 Nikil – Tech Services</h1>
+  <p class="tagline">Scripts • Fixes • Smart Solutions</p>
+
   <div class="box">
     <ul>
-      <li>Python scripting (Jarvis-style tools, automation)</li>
-      <li>Typing and formatting tasks</li>
-      <li>Web research or file work</li>
-      <li>Windows troubleshooting</li>
+      <li>⚙️ Python scripting (Jarvis-style tools, automation)</li>
+      <li>⌨️ Typing & formatting help</li>
+      <li>🔎 Web research or file work</li>
+      <li>🖥️ Windows issues fixed remotely</li>
     </ul>
   </div>
-  <p><b>💸 Rate:</b> ₹500/hour or flat per-task</p>
-  <p><b>📬 Contact:</b> <span id="contactInfo">Reddit: u/Worried-You-7003</span></p>
-  <p><b>📈 Available Now!</b></p>
 
-  <div class="actions">
-    <button class="toggle-btn" onclick="toggleDarkMode()">🌓 Toggle Theme</button>
-    <button onclick="contactMe()">📨 Contact Me</button>
-  </div>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('light');
-    }
-
-    function contactMe() {
-      window.open("https://www.reddit.com/user/Worried-You-7003", "_blank");
-    }
-
-    window.addEventListener('load', () => {
-      if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light');
-      }
-    });
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('light');
-      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
-    }
-  </script>
+  <p><b>💸 ₹500/hour or flat per-task</b></p>
+  <p><b>📬 Reddit:</b> <a href="https://www.reddit.com/user/Worried-You-7003" target="_blank">u/Worried-You-7003</a></p>
+  <button class="cta" onclick="alert('DM me on Reddit to get started!')">Contact Now</button>
 </body>
 </html>
