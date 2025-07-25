@@ -6,22 +6,15 @@
   <title>Nikil's Tech Services</title>
   <style>
     :root {
-      --bg: #111;
-      --text: #eee;
       --accent: #4fc3f7;
-      --box: #222;
-    }
-
-    body.light {
-      --bg: #f4f4f4;
-      --text: #111;
-      --box: #fff;
     }
 
     body {
       font-family: Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b1b1b);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      color: #eee;
       padding: 40px;
       margin: 0;
       overflow-x: hidden;
@@ -35,7 +28,7 @@
     }
 
     .box {
-      background: var(--box);
+      background: rgba(0, 0, 0, 0.6);
       padding: 20px;
       border-radius: 10px;
       margin-top: 20px;
@@ -46,7 +39,7 @@
       animation-delay: 0.7s;
     }
 
-    p {
+    p, ul {
       opacity: 0;
       animation: fadeIn 1s forwards;
     }
@@ -58,7 +51,6 @@
     a, button {
       color: var(--accent);
       text-decoration: none;
-      transition: all 0.3s ease;
       background: none;
       border: none;
       cursor: pointer;
@@ -77,9 +69,16 @@
     .toggle-btn {
       margin-right: 20px;
       padding: 8px 14px;
-      background: var(--box);
+      background: rgba(0, 0, 0, 0.4);
       border: 1px solid var(--accent);
       border-radius: 8px;
+      color: #eee;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     @keyframes fadeInDown {
@@ -92,3 +91,60 @@
         transform: translateY(0);
       }
     }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Nikil – Tech Services & Projects</h1>
+  <p>Offering affordable online help with:</p>
+  <div class="box">
+    <ul>
+      <li>Python scripting (Jarvis-style tools, automation)</li>
+      <li>Typing and formatting tasks</li>
+      <li>Web research or file work</li>
+      <li>Windows troubleshooting</li>
+    </ul>
+  </div>
+  <p><b>💸 Rate:</b> ₹500/hour or flat per-task</p>
+  <p><b>📬 Contact:</b> <span id="contactInfo">Reddit: u/Worried-You-7003</span></p>
+  <p><b>📈 Available Now!</b></p>
+
+  <div class="actions">
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌓 Toggle Theme</button>
+    <button onclick="contactMe()">📨 Contact Me</button>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('light');
+    }
+
+    function contactMe() {
+      window.open("https://www.reddit.com/user/Worried-You-7003", "_blank");
+    }
+
+    window.addEventListener('load', () => {
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light');
+      }
+    });
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    }
+  </script>
+</body>
+</html>
